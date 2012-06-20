@@ -1,0 +1,73 @@
+<div id="HEADER">
+ <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+<div id="CONTENT">
+      <div id="SIDEBAR_LEFT">
+        <div id="IMG_AGREGAR_ELEMENTO">
+          
+        </div>
+        <div id="TEXTO_AGREGAR">
+         
+        </div>
+      </div>
+
+      <div id="CONTENT_BODY">
+        <table class="index">
+    <tr class="encabezado">
+      <th>Orden id</th>
+      <th>Fecha</th>
+      <th>Proveedor</th>
+      <th>Total</th>
+      <th>Dar entrada</th>
+    </tr>
+          <%if @ordenes_pendientes.respond_to?("each")%>
+            <%@ordenes_pendientes.each do |orden| %>
+              <%prov = Proveedore.find_by_proveedor_id(orden.proveedor_id)%>
+        <tr>
+              <div id="ORDENES_ENTRADA">
+                <th class="id"><%= orden.orden_id %></th>
+                <th class="fecha" ><%=orden.fecha%></th>
+                <th class="nombre"><%=prov.nombre%></th>
+                <th class="total"><%=orden.total%></th>
+                 <th class="entrada">    <%=link_to "Dar entrada", dar_entrada_path(orden.orden_id)%></th>
+             </div>
+        </tr>
+       
+              
+            <%end%>
+          <%end%>
+  </table>
+      </div>
+
+      <div id="SIDEBAR_RIGHT">
+
+      </div>
+  </div>
+</div>
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

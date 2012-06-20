@@ -1,0 +1,89 @@
+<div id="HEADER">
+   <div id="LOGO">
+  </div>
+   <div id="LOGOdfg">
+     <a id="LOGOUT"href="http://localhost:3000/sessions/destroy"></a>
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+<div id="CONTENT">
+      <div id="SIDEBAR_LEFT">
+        <div id="IMG_AGREGAR_ELEMENTO">
+         
+        </div>
+        <div id="TEXTO_AGREGAR">
+
+
+        </div>
+      </div>
+
+      <div id="CONTENT_BODY">
+        <h2>Requisiciones pendientes de auntorizar o cancelar</h2>
+          <%if @requis_pendientes.respond_to?("each")%>
+        <table class="index">
+          <tr class="encabezado">
+            <th>No. Req.</th>
+            <th>Usuario</th>
+            <th>Proveedor</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>verificar Requisicion</th>
+          </tr>
+            <%@requis_pendientes.each do |requi|%>
+              <%usua = Usuarios.find(requi.usuario_id)%>
+              <%prove = Proveedore.find_by_proveedor_id(requi.proveedor_id)%>
+              <div>
+                <tr>
+                  <th class="id"><%= requi.requisicion_id%></th>
+                  <th class="nombre"><%=usua.name%></th>
+                  <th class="nombre"><%=prove.nombre%></th>
+                  <th class="fecha"><%=requi.fecha%></th>
+                  <th class="total"><%=requi.total%></th>
+                  <th class="enlaze"><%= link_to "Verificar requisicion", checar_requisicion_path(requi.requisicion_id)%></th>
+              </tr>
+              </div>
+            <%end%>
+        </table>
+          <%else%>
+            <%usuario = Usuario.find(@requis_pendientes.usuario_id)%>
+            <%prove = Proveedore.find(@requis_pendientes.proveedor_id)%>
+            <div>
+                num req:<%= requi.requisicion_id%>
+                usuario: <%=usuario.nombre%>
+                proveedor: <%= prove.nombre %>
+                fecha: <%=requi.fecha%>
+                total: <%=requi.total%>
+                <%= link_to "Verificar requisicion", checar_requisicion_path(requi.requisicion_id)%>
+              </div>
+          <%end%>
+      </div>
+
+      <div id="SIDEBAR_RIGHT">
+
+      </div>
+
+</div>
+</div>
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

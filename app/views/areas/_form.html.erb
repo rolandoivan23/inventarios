@@ -1,0 +1,28 @@
+<%= form_for(@area) do |f| %>
+  <% if @area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@area.errors.count, "error") %> impiden guardar esta area:</h2>
+
+      <ul>
+      <% @area.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :encargado %><br />
+    <%=  f.text_field :encargado %>
+
+  </div>
+
+<div id="BOTON_CREAR_REQUI" class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

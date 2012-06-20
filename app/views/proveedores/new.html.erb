@@ -1,0 +1,40 @@
+<div id="HEADER">
+    <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+     <a id="LOGOUT"href="http://localhost:3000/logout"></a>
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+
+<h1>Nuevo Proveedor</h1>
+<div id="STRUCT_AGREGAR">
+  <div id="NUEVOS">
+    <%= render 'form' %>
+  </div>
+ 
+ </div>
+
+</div>
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

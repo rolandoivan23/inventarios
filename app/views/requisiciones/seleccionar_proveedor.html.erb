@@ -1,0 +1,61 @@
+<div id="HEADER">
+<div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+     <a id="LOGOUT"href="http://localhost:3000/logout"></a>
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+
+  <div id="SELEC_PROV">
+    <span style="font-style: italic"><p>Proveedores Disponibles:</p></span>
+    <p>
+        <%= form_tag(crear_requi_path, :method => "post", :id =>"formProveedor", :name => "formProveedor") do%>
+          <%= collection_select(:proveedor_id, :proveedor_id, @proveedores, :proveedor_id , :nombre, {:prompt => '-----Seleccione un proveedor-----'}, :onchange => "formProveedor.submit()")%>
+        <%end%>
+      </p>
+    </div>
+  <div id="INFO_REQUI">
+    El proceso de crear requisicion es mus sencillo. Dicho proceso se puede dividir en 3 etapas, que son las siguientes:
+    <p>Seleccionar Proveedor</p>
+    <p>Agregar Articuos</p>
+    <p>Intoducir Datos de cada articulo</p>
+  </div>
+
+<div id="IMAGENES_REQUI">
+  <div id="IMA_REQ" class="TRES">
+
+  </div>
+   <div id="IMA_REQ" class="DOS">
+
+  </div>
+
+    <div id="IMA_REQ" class="UNO">
+
+  </div>
+</div>
+
+</div>
+
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

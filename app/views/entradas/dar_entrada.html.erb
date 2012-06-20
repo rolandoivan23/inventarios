@@ -1,0 +1,76 @@
+<div id="HEADER">
+   <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+<div id="CONTENT">
+      <div id="SIDEBAR_LEFT">
+        <div id="IMG_AGREGAR_ELEMENTO">
+         
+        </div>
+        <div id="TEXTO_AGREGAR">
+          
+        </div>
+      </div>
+  
+      <div id="CONTENT_BODY">
+        <table class="index">
+          <tr class="encabezado">
+            <th>Art. ID</th>
+            <th>Descripcion</th>
+            <th>Cantidad Orden</th>
+            <th>Cantidad a Entrara</th>
+          </tr>
+        <%= form_tag(verificar_cantidades_path, :method => "post", :id =>"formEntradas", :name => "formEntradas") do%>
+        <span style="">Orden ID:</span> <%=@orden.orden_id%>
+          <%i=0%>
+          <%@arts_orden.each do |art_orden|%>
+            <div id="ARTICULOS_ORDEN">
+              <tr>
+              <%desc = Articulo.find_by_articulo_id(art_orden.articulo_id)%>
+                <th class="id"><%=art_orden.articulo_id%></th>
+                <th class="descripcion"><%=desc.descripcion %></th>
+                <th class="stock"><%=art_orden.cantidad%></th>
+                <th class="txt_can"><%= text_field_tag(i)  %></th>
+              <%i = i + 1%>
+              </tr>
+            </div>
+          <%end%>
+         </table>
+        <div id="BOTON_CREAR_REQUI"> <%= submit_tag("AcepTar")  %></div>
+    <%end%>
+       
+      </div>
+
+
+      <div id="SIDEBAR_RIGHT">
+
+      </div>
+  </div>
+</div>
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

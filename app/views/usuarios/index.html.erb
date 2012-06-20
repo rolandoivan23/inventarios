@@ -1,0 +1,67 @@
+<div id="HEADER">
+  <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+      
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+  <div id="CONTENT">
+      <div id="SIDEBAR_LEFT">
+        <div id="IMG_AGREGAR_ELEMENTO">
+        </div>
+        <div id="TEXTO_AGREGAR">
+  
+          <span style="margin: 5px; font-style: normal; border-bottom-style: solid; border-bottom-color: #D0D0D0;"><%=link_to "Agregar usuario", new_usuario_path%></span>
+        </div>
+      </div>
+
+      <div id="CONTENT_BODY">
+        <h2>Usuarios del sistema</h2>
+        <table class="index">
+           <tr class="encabezado">
+                      <th>Usuario ID</th>
+                      <th>Nombre</th>
+                      <th>Direccion</th>
+                      <th>Telefono</th>
+              </tr>
+          <%@usuarios.each do |usuario|%>
+              <div id="users">
+                <tr>
+              <th class="id"><%=usuario.id%></th>
+              <th class="nombre"><%=usuario.name%></th>
+              <th class="direccion"><%=usuario.direccion%></th>
+              <th class="telefono"><%=usuario.telefono%></th>
+              </tr>
+              </div>
+          <%end%>
+         </table>
+      </div>
+
+
+  </div>
+</div>
+
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

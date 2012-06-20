@@ -1,0 +1,111 @@
+
+
+
+<div id="HEADER">
+  <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+  <div id="CONTENT">
+
+<h1>Nuevo Usuario</h1>
+
+      <div id="STRUCT_AGREGAR">
+      <%= error_messages_for :usuarios %>
+        
+        
+
+        
+   <div id="TEXTO_NEW_USU">
+     <p>En la parte inferior se</p><p> encuentran las listas de</p><p> 
+       las areas existentes, y los </p><p>tipos de usuario.</p>
+        </div>
+<% @usuarios.password = @usuarios.password_confirmation = nil %>
+
+        <div id="FORMULARIO">
+<%= form_for :usuarios, :url => register_path do |f| -%>
+<p><%= label_tag 'login' %><br/>
+<%= f.text_field :login %></p>
+
+<p><%= label_tag 'Nombre' %><br/>
+<%= f.text_field :name %></p>
+
+<p><%= label_tag 'Direccion' %><br/>
+<%= f.text_field :direccion %></p>
+
+<p><%= label_tag 'Telefono' %><br/>
+<%= f.text_field :telefono %></p>
+
+<p><%= label_tag 'Tipo de usuario' %><br/>
+<%= f.text_field :tipo_usuario_id %></p>
+
+<p><%= label_tag 'Area id' %><br/>
+<%= f.text_field :area_id %></p>
+
+<p><%= label_tag 'email' %><br/>
+<%= f.text_field :email %></p>
+
+<p><%= label_tag 'password' %><br/>
+<%= f.password_field :password %></p>
+
+<p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= submit_tag 'Sign up' %></p>
+<% end -%>
+</div>
+        
+      </div>
+<div id="AREAS">
+            <%@areas.each do |area|%>
+
+          <div>
+
+              <%=area.area_id%>
+              <%=area.nombre%>
+              </div>
+          <%end%>
+
+       </div>
+
+        <div id="TIPO_USUARIO">
+             <%@tipos_usuario.each do |tipo|%>
+
+              <div id="users">
+
+              <%=tipo.tipo_usuario_id%>
+              <%=tipo.tipo%>
+              <%=tipo.descripcion%>
+                </div>
+          <%end%>
+        </div>
+</div>
+  
+</div>
+
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

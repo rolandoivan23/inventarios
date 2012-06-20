@@ -1,0 +1,27 @@
+<%= form_for(@articulo) do |f| %>
+  <% if @articulo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@articulo.errors.count, "error") %> impiden guardar esta area:</h2>
+
+      <ul>
+      <% @articulo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_field :descripcion %>
+  </div>
+
+<div class="field">
+    <%= f.label :puntodereorden %><br />
+    <%=  f.text_field :punto_reorden %>
+  </div>
+
+  <div id="BOTON_CREAR_REQUI" class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

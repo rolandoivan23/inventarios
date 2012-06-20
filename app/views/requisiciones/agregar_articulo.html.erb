@@ -1,0 +1,53 @@
+<div id="HEADER">
+  <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+     <a id="LOGOUT"href="http://localhost:3000/logout"></a>
+  </div>
+</div>
+
+<div id="STRUCTURE">
+  <div id="HEADER_IN">
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+  <div id="CONT_AGREGAR_ART_REQUI">
+    <div id="ARTICULOS_REQUI">
+                <%@articulos.each do |articulo|%>
+                  <div >
+                    <ol>
+                        <%if @arts_requi.size != 0%>
+                            <%art = RequisicioneArticulo.find_by_requisicion_id_and_articulo_id(@requi_id,articulo.articulo_id)%>
+                            <%unless @arts_requi.include?(art)%>
+                                <li><%=articulo.descripcion%></li>
+                                <span style="color: #1c94c4; font-size: 15px; font: bolder;"><%= link_to "Agregar", datos_art_path(@requi_id,articulo.articulo_id)%></span>
+                            <%end%>
+                        <%else%>
+                            <li><%=articulo.descripcion%></li>
+                            <span style="color: #1c94c4; font-size: 15px; font: bolder;"><%= link_to "Agregar", datos_art_path(@requi_id,articulo.articulo_id)%></span>
+                        <%end%>
+                      </ol>
+                  </div>
+                <%end%>
+        </div>
+      <div id="IMG_AGR_ARTS_REQ">
+      </div>
+    </div>
+</div>
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

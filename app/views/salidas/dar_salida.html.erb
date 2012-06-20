@@ -1,0 +1,52 @@
+<div id="HEADER">
+  <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+
+  </div>
+</div>
+<div id="STRUCTURE">
+  <div id="HEADER_IN">
+
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+  <div id="FORM_SALIDA">
+   
+   
+<%= form_tag(verificar_salida_path, :method => "post", :id =>"formSalidas", :name => "formSalidas") do%>
+     <div style="font-size: 20px; color:#cd0a0a; border-style: none;">
+        <p class="id">Articulo ID: <%=@articulo.articulo_id%></p>
+        <p class="descripcion">Descripcion: <%=@articulo.descripcion%></p>
+        <p class="stock">Stock:<%=@articulo.stock%></p>
+        <p class="cantidad_salida">Cantidad a salir:<%= text_field_tag(:cantidad) %></p>
+      </div>
+  <%= submit_tag("Aceptar") %>
+<%end%>
+
+
+  </div>
+
+      <div id="COMP">
+        <div id="IMA_SALIDAS">
+        </div>
+  </div>
+</div>
+
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

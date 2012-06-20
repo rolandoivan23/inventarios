@@ -1,0 +1,579 @@
+/* 
+    Document   : style
+    Created on : 1/11/2010, 09:22:48 PM
+    Author     : rolas
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#personalInfo {
+  width: 209px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-top: 1px solid #D0D0D0;
+  border-right: none;
+  border-bottom: 1px solid #D0D0D0;
+  border-left: 1px solid #D0D0D0;
+  border-radius-topleft: 10px;
+  border-radius-bottomleft: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  box-shadow: -2px 2px 3px #d9d9d9;
+  -webkit-box-shadow: -2px 2px 3px #d9d9d9;
+  -moz-box-shadow: -2px 2px 3px #d9d9d9; }
+html{
+	font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	background-color:#fff;
+	margin:0;
+}
+body{
+	margin:0;
+	border-top:10px solid #333;
+}
+#HEADER{
+        background-image: url(../images/header_inicio.jpg);
+	background-repeat: no-repeat;
+	width:100%;
+	height:300px;
+	margin:auto;
+	background-position: 330px 10px;
+}
+#STRUCTURE{
+	width: 980px;
+        border: 1px solid #ffffff;
+	margin:auto;
+	padding:0px;
+        overflow: auto;
+}
+#HEADER_IN{
+	background-color:#fff;
+	margin:0px;
+	padding:0px;
+}
+#CONTENT{
+	width:967px;
+	position:relative;
+	border: 1px solid #ffffff;
+	margin:5px;
+	overflow:hidden;
+}
+#SIDEBAR_LEFT{
+	width:200px;
+	float:left;
+	top: 0px;
+	left:0px;
+	background-color:#fff;
+	border: 1px solid #FFFFFF;
+	margin:5px;
+}
+#CONTENT_BODY{
+	background-color:#fff;
+	width:715px;
+	float:left;
+	top:37px;
+	left:0px;				 /* si #SIDEBAR_LEFT existe (left: {#SIDEBAR_LEFT:WIDTH}); si no (left:0px;); */
+	border: 1px solid #ffffff;
+	margin:15px;
+
+}
+#SIDEBAR_RIGHT{
+	width:190px;
+	clear:none;
+	float: left;
+	top:10px;
+	right:0px;
+	background-color:#fff;
+	border: 1px solid #ffffff;
+	margin:5px;
+}
+p{
+	margin:0px;
+	padding:10px;
+}
+#FOOTER_IN{
+	background-color:#fff;
+	border: 1px solid #0089FF;
+	margin:5px;
+}
+#FOOTER{
+	margin:0px;
+	width:100%;
+}
+.creditos{
+	margin: 10px;
+	text-align: justify;
+	font-size:13px;
+}
+a{
+	color:#333;
+	text-decoration:none;
+}
+#menu{
+    padding-top:10px ;
+    padding-bottom:10px;
+    margin:0px;
+    width:940px;
+    font-weight:bold;
+    background-color: #eeeefe;
+}
+#menu li{
+    margin-left:-10px;
+    list-style-position:outside;
+    background-repeat: no-repeat;
+    background-position: 4px 7px;
+    list-style-type:none;
+
+    display:inline;
+	font-weight:bold;
+	padding: 5px 23px;
+}
+#menu li:hover{
+    background-color:#f9f9f9;
+    border-left: 5px solid #333;
+}
+#menu #home{
+    background-image: url(../images/house.png);
+}
+#menu #user{
+    background-image: url(../images/user.png);
+}
+#menu #areas{
+    background-image: url(../images/areas_icono.jpg);
+}
+#menu #articuos{
+    background-image: url(../images/articulos_icono.png);
+}
+#menu #proveedores{
+    background-image: url(../images/proveedores.gif);
+}
+#menu #entradas{
+    background-image: url(../images/icono_entradas.jpg);
+}
+#menu #salidas{
+    background-image: url(../images/icono_salidas.jpg);
+}
+#menu span{
+    padding:2px;
+    margin:3px 0px;
+    background-color:#f1f1f1;
+    display:block;
+}
+#NUEVOS{
+    float: left;
+
+
+}
+#VIEJOS{
+    float: left;
+    margin: 0px;
+    margin-top: 0px;
+    margin-left: 7px;
+    padding: 10px;
+    border-style: ridge;
+    border-color: gold;
+    width: 500px;
+}
+#STRUCT_AGREGAR{
+
+    font-family: Arial,Helvetica,sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-variant: inherit;
+    color: olive;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-right-width: 100%;
+    border-left-width: 100%;
+    border-bottom-width: 100%;
+    border-top-width: 100%;
+    border-right-color: #e12e2e;
+    border-left-color: #e12e2e;
+    border-bottom-color: #e12e2e;
+    border-top-color: #e12e2e;
+    background-color: #d2b4b4;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    overflow:hidden;
+}
+#TIPO_USUARIO{
+     float: left;
+    margin: 20px;
+    margin-left: 40px;
+    padding: 10px;
+    border-style: groove;
+    border-color: #eeeefe;
+    width: 40%;
+}
+
+#AREAS{
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    border-style: groove;
+    border-color: #eeeefe;
+    width: 40%;
+}
+
+#IMG_AGREGAR_ELEMENTO {
+    margin: 10px;
+    border-style: outset;
+    border-color: brown;
+    padding: 5px;
+    width: 150px;
+    height: 122px;
+    background-image: url(../images/agregar1.jpg)
+}
+
+#TEXTO_AGREGAR {
+    margin: 7px;
+    font: italic;
+    font-style: oblique;
+    font-size: large;
+    font-weight: bolder;
+}
+
+#ENC_REQUI{
+    width: 950px;
+    height: 30px;
+    margin: 3px;
+    border-style: groove;
+    padding: 5px;
+}
+
+#ELEM_ENC_REQUI{
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+}
+
+#CONTENT_REQUI{
+    margin: 5px;
+    padding: 5px;
+    width: 930px;
+    overflow: hidden;
+}
+
+table{
+    width: 500px;
+    border-bottom-color: #d9d9d9;
+    border-style: double;
+    margin: 7px;
+}
+table.index{
+    width: 700px;
+    border-bottom-color: #d9d9d9;
+    border-style: double;
+    margin: 7px;
+}
+th, td
+{
+border: 1px solid black;
+}
+
+tr.encabezado{
+    border-top: #333;
+    border-top-style: solid;
+    height: 50px;
+    color: #0089FF;
+    text-align: center;
+}
+th.id{
+    font-style: oblique;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+}
+
+th.descripcion{
+    width: 370px;
+    color :red;
+    margin: 7px;
+}
+
+th.stock{
+    width: 20px;
+    margin: 7px;
+    text-align: center;
+}
+
+th.punto_reorden{
+    width: 20px;
+    margin: 7px;
+    text-align: center;
+    list-style: georgian
+}
+
+th.direccion{
+    width: 200px;
+    margin: 7px;
+}
+
+th.telefono{
+    width: 60px;
+    margin: 7px;
+    text-align: right;
+}
+
+th.nombre{
+    width: 165px;
+    margin: 7px;
+}
+
+th.txt_can{
+    max-width:  50px;
+}
+
+#INFO_REQUI{
+    float: left;
+    margin: 15px;
+    margin-top: 25px;
+    border-left-style: outset;
+    border-left-width: 1px;
+    border-left-color: #c77405;
+    border-right-style: outset;
+    border-right-width: 1px;
+    border-right-color: #c77405;
+    padding: 15px;
+    width: 40%;
+    text-align: justify;
+    
+}
+
+#SELEC_PROV{
+    float: left;
+    margin: 15px;
+    margin-top: 25px;
+    border-style: outset;
+    border-width: 1px;
+    border-color: #c77405;
+    padding-left: 80px;
+    padding-right: 0px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    width: 40%;
+    height: 95px;
+    overflow: visible;
+}
+
+#IMAGENES_REQUI{
+    width: 100%;
+    padding: 15px;
+}
+
+#IMA_REQ.UNO{
+    background-image: url(../images/datos_articulo_requi.png);
+    float: left;
+    width: 300px;
+    height: 250px;
+    border-style: double;
+    border-collapse:separate;
+    border-color: bisque;
+    margin: 7px;
+}
+#IMA_REQ.DOS{
+    background-image: url(../images/agregar_articulo.png);
+    float: left;
+    width: 300px;
+    height: 250px;
+    border-style: double;
+    border-collapse:separate;
+    border-color: bisque;
+    margin: 7px;
+}
+#IMA_REQ.TRES{
+    background-image: url(../images/seleccionar_proveedor.png);
+    float: left;
+    width: 300px;
+    height: 250px;
+    border-style: double;
+    border-collapse:separate;
+    border-color: bisque;
+    margin: 7px;
+}
+
+#BOTON_CREAR_REQUI{
+    margin: 15px;
+
+}
+
+#FORM_SALIDA{
+    float: left;
+    background-image: url(../images/fondo.jpg);
+    height: 300px;
+    color: #cd0a0a;
+    font-family: fantasy;
+    font: status-bar;
+    font-style: inherit;
+    font-weight: lighter;
+    font-size: x-large;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+#IMA_SALIDAS{
+    background-image: url(../images/salidas.jpg);
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+
+#COMP{
+    float: left;
+    background-image: url(../images/fondo.jpg);
+    height: 260px;
+    width: 400px;
+  padding-left: 151px;
+    padding-top: 60px;
+}
+
+ol{
+    list-style-type:none;
+    padding:5px;
+    margin:7px;
+}
+
+li
+{
+    border-top: #D0D0D0;
+    border-top-style: double;
+   
+background-image: url(../images/lista.jpg);
+background-repeat:  no-repeat;
+background-position:0px 5px;
+padding-left:27px;
+margin: 4px;
+height: 30px;
+font-style: italic;
+}
+
+#CONT_AGREGAR_ART_REQUI{
+    width: 100%;
+    background-color: #d9d9d9;
+}
+
+#ARTICULOS_REQUI{
+    float: left;
+    width: 40%;
+    margin: 5px;
+    padding: 5px;
+}
+
+#IMG_AGR_ARTS_REQ{
+    float: left;
+    background-image: url(../images/agregar_articulo.jpg);
+    background-repeat: repeat-y;
+    width: 550px;
+    height: 410px;
+}
+
+#IMG_DATOS_ART{
+    float: left;
+    background-image: url(../images/datos_articulo.jpg);
+     width: 550px;
+    height: 410px;
+    background-repeat: no-repeat;
+}
+
+#LOGOUT{
+    float: right;
+    width: 160px;
+    height: 82px;
+    background-image: url(../images/logout-Icon.jpg);
+    float: right;
+}
+
+#LOGO{
+    width: 160px;
+    height: 82px;
+    float: left;
+    background-image: url(../images/LOGO_SYSTEMA.jpg);
+}
+
+#ARTS_P_RO{
+    width: 700px;
+    overflow: auto;
+}
+
+#LET_FOO{
+    font-style: oblique;
+    font-family: fantasy;
+    font-size:  medium;
+    font-variant: small-caps;
+    background-color: #d9d9d9;
+    margin: 50px;
+    text-align: center;
+    margin:auto;
+	width:948px;
+}
+
+h4{
+    float: left;
+    font-style: italic;
+    font-size: medium;
+    text-align: left;
+    width: 40%;
+    padding-left: 5px;
+    border-style: dotted;
+    border-left: 40px;
+    margin-top: 0px;
+    margin-left:  3px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+}
+
+#STRUCT_AREAS_PROV{
+     float: left;
+    margin: 60px;
+    margin-top: 10px;
+    margin-right: 0px;
+    padding: 15px;
+    border-style: ridge;
+    border-color: gold;
+    width: 500px;
+}
+
+#FORM_VERI_REQUI{
+    margin: 15px;
+}
+
+h2{
+    width: 300px;
+    margin-left: 20px;
+}
+
+#FORMULARIO{
+    width: 320px;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+#TEXTO_NEW_USU{
+    float: right;
+    margin: 20px;
+    margin-top: 40px;
+    font: status-bar;
+    font-size: xx-large;
+    text-align: center;
+    color: #fbf9ee;
+    font-weight: 300;
+    width: 450px;
+    overflow: auto;
+}

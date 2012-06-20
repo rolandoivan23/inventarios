@@ -1,0 +1,2 @@
+module SalidasHelper
+end

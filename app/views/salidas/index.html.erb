@@ -1,0 +1,74 @@
+<div id="HEADER">
+   <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+     <a id="LOGOUT"href="http://localhost:3000/sessions/destroy"></a>
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+<div id="CONTENT">
+      <div id="SIDEBAR_LEFT">
+        <div id="IMG_AGREGAR_ELEMENTO">
+     
+        </div>
+        <div id="TEXTO_AGREGAR">
+     
+
+          <span style="font-size: medium; margin: 5px; border-bottom-style: solid; border-bottom-color: #D0D0D0;"><%= link_to "Articulos disponibles para dar salida", articulos_salida_path%></span>
+        </div>
+      </div>
+
+      <div id="CONTENT_BODY">
+        <h2>Salidas ultimo mes</h2>
+           <table class="index">
+                    <tr class="encabezado">
+                      <th>Salida Id</th>
+                      <th>Art. Id</th>
+                      <th>Usuario salida</th>
+                      <th>cantidad</th>
+                      <th>Fecha</th>
+                    </tr>
+			<%@salidas_mes.each do |salida|%>
+                        <%usuario = Usuarios.find(salida.usuario_salida_id)%>
+                        
+                   <div id="ARTS_P_RO">
+                     <tr>
+                       <th class="id"><%=salida.salida_id%></th>
+                       <th class="id"><%=salida.articulo_id%></th>
+                       <th class="nombre"><%=usuario.name%></th>
+                       <th class="nombre"><%=salida.cantidad%></th>
+                       <th class="fecha"><%=salida.fecha%></th>
+                     </tr>
+                     </div>
+                        <%end%>
+                    </table>
+      </div>
+
+      <div id="SIDEBAR_RIGHT">
+
+      </div>
+  </div>
+</div>
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>

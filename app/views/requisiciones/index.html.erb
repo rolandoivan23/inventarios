@@ -1,0 +1,72 @@
+<div id="HEADER">
+  <div id="LOGO">
+  </div>
+   <div id="LOGOUT">
+     <a id="LOGOUT"href="http://localhost:3000/logout"></a>
+  </div>
+</div>
+
+<div id="STRUCTURE">
+	<div id="HEADER_IN">
+
+		<ul id="menu">
+			<li id="home"><%= link_to "Inicio", inicio_index_path %></li>
+			<li id="user"><%= link_to "Usuarios", usuarios_path %></li>
+			<li id="areas"><%= link_to "Areas", areas_path %></li>
+			<li id="articuos"><%= link_to "Articulos", articulos_path %></li>
+			<li id="proveedores"><%= link_to "Proveedores", proveedores_path %></li>
+                        <li id="photo"><%= link_to "Requisiciones", requisiciones_index_path %></li>
+                        <li id="photo"><%= link_to "Ordenes", ordenes_index_path %></li>
+                        <li id="entradas"><%= link_to "Entradas", entradas_index_path %></li>
+                        <li id="salidas"><%= link_to "Salidas", salidas_index_path %></li>
+		</ul>
+	</div>
+<div id="CONTENT">
+      <div id="SIDEBAR_LEFT">
+        <div id="IMG_AGREGAR_ELEMENTO">
+          
+        </div>
+        <div id="TEXTO_AGREGAR">
+          
+          <span style="font-size: medium; margin: 5px; border-bottom-style: solid; border-bottom-color: #D0D0D0;"><%= link_to "Crear Requisicion", requisiciones_seleccionar_proveedor_path %></span>
+        </div>
+      </div>
+
+      <div id="CONTENT_BODY">
+        <h2>Requisiciones del ultimo mes</h2>
+        <table class="index">
+                    <tr class="encabezado">
+                      <th>Requi. ID</th>
+                      <th>Usuario</th>
+                      <th>Proveedor</th>
+                      <th>Fecha</th>
+                    </tr>
+			<%@requis_mes.each do |requisicion|%>
+                        <%usuario = Usuarios.find(requisicion.usuario_id)%>
+                        <%proveedor = Proveedore.find_by_proveedor_id(requisicion.proveedor_id)%>
+                   <div id="ARTS_P_RO">
+                     <tr>
+                       <th class="id"><%=requisicion.requisicion_id%></th>
+                       <th class="nombre`"><%=usuario.name%></th>
+                       <th class="nombre"><%=proveedor.nombre%></th>
+                       <th class="fecha"><%=requisicion.fecha%></th>
+                     </tr>
+                     </div>
+                        <%end%>
+                    </table>
+      </div>
+
+      <div id="SIDEBAR_RIGHT">
+
+      </div>
+
+</div>
+</div>
+<div id="FOOTER">
+  <div id="LET_FOO">
+   ©  Universidad autonoma de chihuahua
+  </div>
+   <div id="LET_FOO">
+    Todos los derechos reservados
+  </div>
+</div>
